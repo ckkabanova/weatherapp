@@ -172,8 +172,8 @@ app.get("/stopCron", (req, res) => {
     return res.json({ error: false, message: "cron working" });
   }
 });
-app.listen(process.env.PGPORT, () => {
-  console.log("server is listening on port " + process.env.PGPORT);
+app.listen(process.env.PORT, () => {
+  console.log("server is listening on port " + process.env.PORT);
 });
 
 /*
