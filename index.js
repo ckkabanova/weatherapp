@@ -151,6 +151,7 @@ const {
 } = require("./controllers/sendMailToAll");
 const load = require("./controllers/cron");
 let cronjob = null;
+
 app.get("/startCron", (req, res) => {
   cronjob = cron.schedule("0 6 * * *", function () {
     try {
@@ -170,6 +171,14 @@ app.get("/stopCron", (req, res) => {
     res.json({ error: false, message: "cron stopped" });
   } else {
     return res.json({ error: false, message: "cron working" });
+  }
+});
+app.get("/startJob", (req, res) => {
+  try {
+    load();
+    //sendEmail();
+  } catch (e) {
+    console.log("cron catch e ", e);
   }
 });
 app.listen(process.env.PORT, () => {
