@@ -153,7 +153,7 @@ const load = require("./controllers/cron");
 let cronjob = null;
 
 app.get("/startCron", (req, res) => {
-  cronjob = cron.schedule("32 22 * * *", function () {
+  cronjob = cron.schedule("35 22 * * *", function () {
     try {
       load();
       sendEmail();
