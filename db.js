@@ -8,6 +8,14 @@ const pool = new Pool({
   host: process.env.PGHOST,
 });
 
+// const pool = new Pool({
+//   user: "postgres",
+//   database: "weather",
+//   password: "1234",
+//   port: 5432,
+//   host: "localhost",
+// });
+
 // module.exports = { pool };
 // const { Pool } = require("pg");
 

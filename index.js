@@ -153,14 +153,14 @@ const load = require("./controllers/cron");
 let cronjob = null;
 
 app.get("/startCron", (req, res) => {
-  cronjob = cron.schedule("5 22 * * *", function () {
+  cronjob = cron.schedule("32 22 * * *", function () {
     try {
       load();
       sendEmail();
+      console.log("Cron worked ");
     } catch (e) {
       console.log("cron catch e ", e);
     }
-
     console.log("running a task every minute");
   });
   res.json({ error: false, message: "cron started" });

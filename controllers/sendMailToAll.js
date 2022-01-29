@@ -46,6 +46,7 @@ async function sendEmail() {
 
     if (rows.length > 0) {
       rows.map(async (row) => {
+        console.log("row ", row);
         const date = getTodayDate();
         const weather = await getWeatherByDate(row.aimag_id, date);
         const aimag = await getAimagNameById(row.aimag_id);
