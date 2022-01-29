@@ -177,8 +177,10 @@ app.get("/startJob", (req, res) => {
   try {
     load();
     //sendEmail();
+    res.json({ error: false, message: "job started" });
   } catch (e) {
     console.log("cron catch e ", e);
+    res.json({ error: false, message: "job started catch ", data: e });
   }
 });
 app.listen(process.env.PORT, () => {
